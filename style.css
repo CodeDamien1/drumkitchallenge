@@ -1,0 +1,156 @@
+
+
+
+
+body {
+    background: linear-gradient(-45deg, #030000, #8d0000, #c8025e, #aa0096);
+    background-size: 500% 1000%;
+    animation: gradient 15s ease infinite;
+    font-family: 'VT323', monospace;
+    color: white;
+    margin:0px;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	25% {
+		background-position: 50% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+    75% {
+		background-position: 50% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+.keys {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-flow: row nowrap;
+    margin: auto;
+    
+}
+.keyswrapper {
+    padding: 5px;
+    flex: 0.1 0 0;
+    border-radius: 10px;
+    margin:0.5rem;
+    background: conic-gradient(
+        #fd004c,
+        #fe9000,
+        #fff020,
+        #3edf4b,
+        #3363ff,
+        #b102b7,
+        #fd004c);
+        left: -25%;
+        top: -25%;
+        animation:spin 1s infinite linear
+}
+@keyframes spin{
+    0%{
+        background: conic-gradient( 
+            #fd004c,
+            #fe9000,
+            #fff020,
+            #3edf4b,
+            #3363ff,
+            #b102b7,
+            #fd004c);
+    }
+    15%{
+        background: conic-gradient( 
+            #fe9000,
+            #fff020,
+            #3edf4b,
+            #3363ff,
+            #b102b7,
+            #fd004c,
+            #fe9000);
+    }
+    30%{
+        background: conic-gradient( 
+            #fff020,
+            #3edf4b,
+            #3363ff,
+            #b102b7,
+            #fd004c,
+            #fe9000,
+            #fff020);
+    }
+    45%{
+        background: conic-gradient(
+            #3edf4b,
+            #3363ff,
+            #b102b7,
+            #fd004c,
+            #fe9000,
+            #fff020,
+            #3edf4b);
+    }60%{
+        background: conic-gradient(
+            #3363ff,
+            #b102b7,
+            #fd004c,
+            #fe9000,
+            #fff020,
+            #3edf4b,
+            #3363ff);
+    }75%{
+        background: conic-gradient(
+            #b102b7,
+            #fd004c,
+            #fe9000,
+            #fff020,
+            #3edf4b,
+            #3363ff,
+            #b102b7);
+    }100%{
+        background: conic-gradient( 
+            #fd004c,
+            #fe9000,
+            #fff020,
+            #3edf4b,
+            #3363ff,
+            #b102b7,
+            #fd004c);
+    }
+    } 
+.key {
+    border-radius: 5px;
+    font-size: 1.5rem;
+    padding: 1.3rem .5rem;
+    transition:all 0.07s;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    background: rgba(0, 0, 0, 1);
+    text-shadow: 0 0 5px black;
+}
+
+.playing {
+    transform: scale(2);
+    border: color #ffc600;
+    box-shadow: 0 0 10px #ffc600;
+    display: flex;
+}
+
+kbd {
+    display: block;
+    font-size: 40px;
+}
+.sound {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffc600;
+}
+@keyframes zoom {
+    0%{transform: scale(1);}
+    50%{transform: scale(1.5);}
+    100%{transform: scale(1);}
+}
