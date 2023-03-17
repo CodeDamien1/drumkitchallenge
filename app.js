@@ -20,6 +20,10 @@ let snarewrapper = document.getElementById("snarewrapper");
 let tinkwrapper = document.getElementById("tinkwrapper");
 let tomwrapper = document.getElementById("tomwrapper");
 
+
+let allKeys = document.querySelectorAll(".keyswrapper");
+let allSounds = [boom, clap, hiHat, kick, openhat, ride, snare, tink, tom];
+
 function removeTransition(e) {
     if (e.propertyName !== 'transform') return;
     console.log(e.propertyName);
@@ -105,85 +109,96 @@ document.addEventListener('keypress', (keyValue) => {
   })
 
 let count = 0
-
-main.addEventListener("click", () => {
-    count++
-if(count%2 == 0){
-    main.style.animation = "mainDrum 0.1s linear"
-    setTimeout(() => {
-        main.style.removeProperty('animation')
-    }, 100)
-    boom.pause()
-    boom.currentTime = 0
-    boom.play();
-} else{
-    main.style.animation = "mainDrum 0.1s linear"
+allKeys.forEach((key, index) => {
+    key.addEventListener("click", () => {
+        key.style.animation = "zoom 0.1s linear"
         setTimeout(() => {
-            main.style.removeProperty('animation')
-        }, 100)
-        kick.pause()
-        kick.currentTime = 0
-        kick.play();
-}
-})
-
-tomDrum.addEventListener("click", () => {
-    tomDrum.style.animation = "tomDrum 0.25s linear"
-        setTimeout(() => {
-            tomDrum.style.removeProperty('animation')
+            key.style.removeProperty('animation')
         }, 250)
-        tom.pause()
-        tom.currentTime = 0
-        tom.play();
-})
+        allSounds[index].pause()
+        allSounds[index].currentTime = 0
+        allSounds[index].play()
+    });
+});
 
-document.getElementsByClassName("hihatContainer")[0].addEventListener("click", () => {
-    count++
-if(count%5 == 0){
-    openhatCymbal.style.animation = "openHihat 0.1s linear"
-        setTimeout(() => {
-            openhatCymbal.style.removeProperty('animation')
-        }, 100)
-        openhat.pause()
-        openhat.currentTime = 0
-        openhat.play();
-} else{
-    hihatCymbal.style.animation = "zoom 0.1s linea"
-        setTimeout(() => {
-            hihatCymbal.style.removeProperty('animation')
-        }, 100)
-        hihat.pause()
-        hihat.currentTime = 0
-        hihat.play();
-}
-})
+// main.addEventListener("click", () => {
+//     count++
+// if(count%2 == 0){
+//     main.style.animation = "mainDrum 0.1s linear"
+//     setTimeout(() => {
+//         main.style.removeProperty('animation')
+//     }, 100)
+//     boom.pause()
+//     boom.currentTime = 0
+//     boom.play();
+// } else{
+//     main.style.animation = "mainDrum 0.1s linear"
+//         setTimeout(() => {
+//             main.style.removeProperty('animation')
+//         }, 100)
+//         kick.pause()
+//         kick.currentTime = 0
+//         kick.play();
+// }
+// })
 
-document.getElementsByClassName("snareContainer")[0].addEventListener("click", () => {
-    snareDrum.style.animation = "snareDrum 0.1s linear"
-        setTimeout(() => {
-            snareDrum.style.removeProperty('animation')
-        }, 100)
-        snare.pause()
-        snare.currentTime = 0
-        snare.play();
-})
+// tomDrum.addEventListener("click", () => {
+//     tomDrum.style.animation = "tomDrum 0.25s linear"
+//         setTimeout(() => {
+//             tomDrum.style.removeProperty('animation')
+//         }, 250)
+//         tom.pause()
+//         tom.currentTime = 0
+//         tom.play();
+// })
 
-document.getElementsByClassName("cymbalContainer")[0].addEventListener("click", () => {
-    mainCymbal.style.animation = "mainCymbal 0.1s linear"
-        setTimeout(() => {
-            mainCymbal.style.removeProperty('animation')
-        }, 100)
-        ride.pause()
-        ride.currentTime = 0
-        ride.play();
-})
+// document.getElementsByClassName("hihatContainer")[0].addEventListener("click", () => {
+//     count++
+// if(count%5 == 0){
+//     openhatCymbal.style.animation = "openHihat 0.1s linear"
+//         setTimeout(() => {
+//             openhatCymbal.style.removeProperty('animation')
+//         }, 100)
+//         openhat.pause()
+//         openhat.currentTime = 0
+//         openhat.play();
+// } else{
+//     hihatCymbal.style.animation = "zoom 0.1s linea"
+//         setTimeout(() => {
+//             hihatCymbal.style.removeProperty('animation')
+//         }, 100)
+//         hihat.pause()
+//         hihat.currentTime = 0
+//         hihat.play();
+// }
+// })
 
-document.getElementsByClassName("clap")[0].addEventListener("click", () => {
-    clap.style.animation = "mainCymbal 0.1s linear"
-        setTimeout(() => {
-            clap.style.removeProperty('animation')
-        }, 100)
-        clap.pause()
-        clap.currentTime = 0
-        clap.play();
-})
+// document.getElementsByClassName("snareContainer")[0].addEventListener("click", () => {
+//     snareDrum.style.animation = "snareDrum 0.1s linear"
+//         setTimeout(() => {
+//             snareDrum.style.removeProperty('animation')
+//         }, 100)
+//         snare.pause()
+//         snare.currentTime = 0
+//         snare.play();
+// })
+
+// document.getElementsByClassName("cymbalContainer")[0].addEventListener("click", () => {
+//     mainCymbal.style.animation = "mainCymbal 0.1s linear"
+//         setTimeout(() => {
+//             mainCymbal.style.removeProperty('animation')
+//         }, 100)
+//         ride.pause()
+//         ride.currentTime = 0
+//         ride.play();
+// })
+
+// document.getElementsByClassName("clap")[0].addEventListener("click", () => {
+//     clap.style.animation = "mainCymbal 0.1s linear"
+//         setTimeout(() => {
+//             clap.style.removeProperty('animation')
+//         }, 100)
+//         clap.pause()
+//         clap.currentTime = 0
+//         clap.play();
+// })
